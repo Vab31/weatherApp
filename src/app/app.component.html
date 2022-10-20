@@ -57,27 +57,32 @@
 </div>
 </div> -->
 <div class="container" >
-  <div class="searchbox"><p>
-    <input type="text" name="search" id="search"  [(ngModel)]="searchval">
-    <button type="button" (click)="ngOnInit()">Clickme</button></p>
+ 
+  <div  class="d-flex" role="search" >
+    <!-- <input type="text" name="search" id="search"  [(ngModel)]="searchval">
+    <button type="button" (click)="ngOnInit()">Clickme</button> -->
+        <input class="form-control me-2 my-2" name="search" id="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchval">
+        <button class="btn btn-outline-light my-2" type="submit" (click)="ngOnInit()">Search</button>
   </div>
   <div class="upper-data">
-    <img src="../assets/hotday.jpg" alt="" *ngIf="14>15">
-    <img src="../assets/winter-snowfall-snow-white.jpg" alt="" *ngIf="14 <= 15">
+    <img src="../assets/hotday.jpg" alt="" *ngIf='tempi>15'>
+    <img src="../assets/winter-snowfall-snow-white.jpg"  alt="" *ngIf='tempi <= 15'>
   
 
 <div class="weather-data">
-  <div class="location">
-    {{searchval}}
+  <div class="location my-0">
+    {{flag}}
   </div>
-  <div class="tem">{{tempi}}</div> 
+  <div class="tem">{{tempi}}°C</div> 
 </div>
 </div>
 
 <div class="lower-data">
 <div class="more_info">
   More Information
-</div>
+  
+  <span class="badge text-bg-danger mx-3"  ng-click="alertmessage(alertmessage)">Danger</span>
+  
 <div class="more_info_container">
   <div class="info_block">
     <div class="info_block_label">
